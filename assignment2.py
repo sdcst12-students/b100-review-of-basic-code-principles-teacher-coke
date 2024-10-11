@@ -24,16 +24,11 @@ final balance: 1320.68
 """
 
 P = float(input("Enter annual investment: "))
-R = float(input("Enter the annual interest rate in percentage: "))
+R = float(input("Enter the annual interest rate in percentage: "))/100
 T = int(input("Enter number of years: "))
-B=0
-p=0
-A=P
-for i in range(1, T+1):
-    I=(P+p)*R/100*i #interest
-    A+=I #interest+intial
-    p+=A #next year money
-    B+=A
-    print(i, round(B, 2))
-print(B)
+B=0.0
+for i in range(T):
+    B+=P
+    B+=B*R
+print(f"Final balace: ${round(B, 2)}")
 
