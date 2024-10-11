@@ -23,3 +23,12 @@ final balance: 1320.68
 
 """
 
+P = float(input("Enter annual investment: "))
+R = float(input("Enter the annual interest rate in percentage: "))/100
+T = int(input("Enter number of years: "))
+B=0.0
+for i in range(T):
+    B+=P
+    B+=B*R
+print(f"Final balace: ${round(B, 2)}")
+
